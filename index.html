@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b2d">
+  <meta name="description" content="Uma aventura interativa criada com HTML, CSS e JavaScript.">
+  <title>O Segredo da Floresta | Aventura Interativa</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="background-glow"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="O Segredo da Floresta">
+      <span class="brand-icon">✦</span>
+      <span>AVENTURA<span class="brand-light"> INTERATIVA</span></span>
+    </a>
+    <div class="top-status">
+      <span class="status-dot"></span>
+      SUA JORNADA COMEÇA AQUI
+    </div>
+  </header>
+
+  <main class="game-shell">
+    <section class="intro" id="intro">
+      <div class="intro-art">
+        <div class="moon"></div>
+        <div class="mountain mountain-back"></div>
+        <div class="mountain mountain-front"></div>
+        <div class="forest-symbol">🌲</div>
+        <span class="art-star star-one">✦</span>
+        <span class="art-star star-two">✧</span>
+        <span class="art-star star-three">✦</span>
+      </div>
+
+      <div class="intro-content">
+        <p class="eyebrow">UMA HISTÓRIA • MUITAS POSSIBILIDADES</p>
+        <h1>O Segredo da<br><span>Floresta</span></h1>
+        <p class="intro-description">
+          Uma antiga floresta esconde um segredo. Suas escolhas vão
+          determinar o caminho, os desafios e o destino desta aventura.
+        </p>
+        <div class="intro-details">
+          <span>⌁ História interativa</span>
+          <span>◇ Escolhas e desafios</span>
+          <span>✧ Finais diferentes</span>
+        </div>
+        <button class="primary-button" id="startButton">
+          COMEÇAR A AVENTURA <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="game" id="game" hidden>
+      <div class="game-heading">
+        <div>
+          <p class="eyebrow">SUA JORNADA</p>
+          <h2 id="chapterTitle">Capítulo 01</h2>
+        </div>
+        <button class="small-button" id="restartButton" title="Reiniciar aventura">
+          ↻ <span>Reiniciar</span>
+        </button>
+      </div>
+
+      <div class="progress-area">
+        <div class="progress-label">
+          <span>PROGRESSO DA HISTÓRIA</span>
+          <span id="progressText">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <div class="game-layout">
+        <article class="story-card">
+          <div class="scene-art" id="sceneArt">
+            <span id="sceneEmoji">🌲</span>
+            <span class="scene-tag" id="sceneTag">A FLORESTA</span>
+          </div>
+          <div class="story-content">
+            <p class="story-location" id="sceneLocation">LOCALIZAÇÃO DESCONHECIDA</p>
+            <h3 id="sceneTitle">O início da jornada</h3>
+            <p class="story-text" id="sceneText"></p>
+            <div class="choices" id="choices"></div>
+            <p class="feedback" id="feedback" aria-live="polite"></p>
+          </div>
+        </article>
+
+        <aside class="side-panel">
+          <div class="panel-card">
+            <p class="panel-title">SEU INVENTÁRIO</p>
+            <div class="inventory-items" id="inventory">
+              <span class="empty-inventory">Sua mochila está vazia.</span>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <p class="panel-title">STATUS DA JORNADA</p>
+            <div class="status-row">
+              <span>Etapa</span>
+              <strong id="stageStatus">01</strong>
+            </div>
+            <div class="status-row">
+              <span>Itens encontrados</span>
+              <strong id="itemStatus">0</strong>
+            </div>
+            <div class="status-row">
+              <span>Escolhas feitas</span>
+              <strong id="choiceStatus">0</strong>
+            </div>
+          </div>
+
+          <div class="tip-card">
+            <span>💡</span>
+            <div>
+              <strong>Dica do explorador</strong>
+              <p>Observe as opções com atenção. Cada escolha pode mudar sua história.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="ending-screen" id="ending" hidden>
+      <div class="ending-icon" id="endingIcon">🏆</div>
+      <p class="eyebrow">FIM DA JORNADA</p>
+      <h2 id="endingTitle">A aventura terminou!</h2>
+      <p id="endingText"></p>
+      <div class="ending-stats" id="endingStats"></div>
+      <button class="primary-button" id="playAgainButton">
+        JOGAR NOVAMENTE <span>↻</span>
+      </button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>O SEGREDO DA FLORESTA</span>
+    <span>Desenvolvido com HTML • CSS • JavaScript</span>
+  </footer>
+</body>
+</html>
